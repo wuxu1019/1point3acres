@@ -1,4 +1,12 @@
+"""
+Determine if a number is a numerical palindrome:
 
+Yes: 1, 9, 121 , 3003
+Numbers that aren’t are: 10 100 402.
+
+bool isNumericalPalindrome(unit32 number, uint32 base (Like base 10,  base 16 base 7);
+
+"""
 
 def isNumericalPalindrome(num, base):
     p1, p2, mul = 0, 0, 1
