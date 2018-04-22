@@ -1,0 +1,73 @@
+1: diff between call by value and call by reference
+When passing data by value, the data is copied to a local variable/object in the function. Changes to this data are not reflected in the data of the calling function. For larger objects, passing data by value can be very expensive.
+When passing data by reference, a pointer to the data is copied instead. Changes to the data pointed to by the pointer are reflected in the data of the calling function. Regardless of the size of the object, passing data by reference always has the same cost.
+
+2. static
+Static Data Members: static data members are class members and shared among all objects.
+Static Member Methods: static methods declared as static are class members
+1> can only called other static methods
+2> they can only access static data
+3> they can not access this or supper
+static local variable:
+Static variables: means that they will die with the program itself,
+this means that the memory will be allocated & never will be released implicitly.
+Global: these variables can be accessed from anywhere.
+Local: these variables can be accessed inside their scopes only.
+
+
+Static variables are not accessible by other files using extern keywords.
+
+
+3. distinct between memcopy and memmove
+memcpy() and memmove()
+
+void memcopy(void *dest, void *src, size_t n){
+    char *csrc = (char *)src;
+    char *cdest = (char *)dest;
+
+    for(i = 0; i < n; i++){
+        cdest[i] = csrc[i]
+    }
+
+}
+
+void myMemMove(void *dest, void *src, size_t n){
+   // Typecast src and dest addresses to (char *)
+   char *csrc = (char *)src;
+   char *cdest = (char *)dest;
+
+   // Create a temporary array to hold data of src
+   char *temp = new char[n];
+
+   // Copy data from csrc[] to temp[]
+   for (int i=0; i<n; i++)
+       temp[i] = csrc[i];
+
+   // Copy data from temp[] to cdest[]
+   for (int i=0; i<n; i++)
+       cdest[i] = temp[i];
+
+   delete [] temp;
+}
+
+4. diff between heap and stack
+Function parameters and local variables are generally allocated on a stack.
+A heap is generally used for larger data structures or memory that the programmer wants to explicitly manage.
+Whenever “new” or “malloc” is used in C++ or C respectively, the memory for that request is allocated on a heap,
+and then it’s up to the coder to make sure that is gets freed at the appropriate time with “delete” or “free”.
+
+Global variables have static storage duration.
+They are stored in an area that is separate from both "heap" and "stack".
+Global constant objects are usually stored in "code" segment,
+while non-constant global objects are stored in the "data" segment.
+
+5.Memory Layout of C Programs
+A typical memory representation of C program consists of following sections.
+1. Text segment
+2. Initialized data segment
+3. Uninitialized data segment
+4. Stack
+5. Heap
+https://www.geeksforgeeks.org/memory-layout-of-c-program/
+
+
