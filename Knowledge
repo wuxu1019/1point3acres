@@ -66,8 +66,8 @@ A typical memory representation of C program consists of following sections.
 1. Text segment
 2. Initialized data segment
 3. Uninitialized data segment
-4. Stack
-5. Heap
+4. Heap
+5. Stack
 https://www.geeksforgeeks.org/memory-layout-of-c-program/
 
 
@@ -113,7 +113,6 @@ Whereas spinlocks do not switch context and keep spinning. As soon as resource i
 
 11. diff between interrupt and polling
 
-12. diff between call by value and call by reference
 
 13. how bootloader work
 
@@ -122,8 +121,6 @@ Whereas spinlocks do not switch context and keep spinning. As soon as resource i
 15. what is enum
 
 16. what is callback function
-
-17. property of OOP
 
 18. diff between heap and stack, why use heap
 
@@ -140,3 +137,23 @@ Whereas spinlocks do not switch context and keep spinning. As soon as resource i
 24. cuda
 CUDA is a parallel computing platform and programming model that makes using a GPU
 for general purpose computing simple and elegant.
+
+24. OOP concept
+object
+class
+inheritance
+polymorphism
+abstraction
+encapsulation
+
+25 inline function
+C++ provides an inline functions to reduce the function call overhead.
+Inline function is a function that is expanded in line when it is called.
+When the inline function is called whole code of the inline function gets inserted or substituted at the point of inline function call.
+This substitution is performed by the C++ compiler at compile time. Inline function may increase efficiency if it is small.
+The syntax for defining the function inline is:
+
+inline return-type function-name(parameters)
+{
+    // function code
+}
