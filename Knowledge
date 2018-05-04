@@ -146,7 +146,7 @@ polymorphism
 abstraction
 encapsulation
 
-25 inline function
+25. inline function
 C++ provides an inline functions to reduce the function call overhead.
 Inline function is a function that is expanded in line when it is called.
 When the inline function is called whole code of the inline function gets inserted or substituted at the point of inline function call.
@@ -157,3 +157,16 @@ inline return-type function-name(parameters)
 {
     // function code
 }
+
+26. diff between static library and dynamic library
+Static libraries, while reusable in multiple programs, are locked into a program at compile time.
+Dynamic, or shared libraries on the other hand, exist as separate files outside of the executable file.
+
+The downside of using a static library is that it’s code is locked into the final executable file a
+nd cannot be modified without a re-compile. In contrast, a dynamic library can be modified without a need to re-compile.
+
+The upside of using a dynamic library is that multiple running applications can use the same library without the
+need for each to have it’s own copy.
+
+
+
