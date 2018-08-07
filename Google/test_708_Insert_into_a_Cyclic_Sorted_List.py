@@ -40,7 +40,7 @@ class Node(object):
 
 
 class Solution(object):
-    def insert(self, head, insertVal):
+    def insert_onepass(self, head, insertVal):
         """
         :type head: Node
         :type insertVal: int
@@ -69,3 +69,27 @@ class Solution(object):
                 return head
             cur = cur.next
             nex = nex.next
+
+
+    def insert_twopass(self, head, interVal):
+        if not head:
+            rt = Node(insertVal, None)
+            rt.next = rt
+            return rt
+
+        cur = head
+        while cur.next != head and cur.next.val >= cur.val:
+            cur = cur.next
+        maxi = cur
+        dummy = Node(0, maxi.next)
+        maxi.next = None
+
+        cur = dummy
+        while cur.next and insertVal > cur.next.val:
+            cur = cur.next
+        cur.next = Node(insertVal, cur.next)
+
+        maxi = maxi if maxi.next == None else maxi.next
+        maxi.next = dummy.next
+
+        return head
