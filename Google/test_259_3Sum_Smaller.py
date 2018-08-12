@@ -13,7 +13,7 @@ Follow up: Could you solve it in O(n2) runtime?
 
 
 class Solution(object):
-    def threeSumSmaller(self, nums, target):
+    def threeSumSmaller_twopointer1(self, nums, target):
         """
         :type nums: List[int]
         :type target: int
@@ -34,4 +34,26 @@ class Solution(object):
                     ct += r - l
                     l += 1
 
+        return ct
+
+    def threeSumSmaller_twopointer2(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: int
+        """
+        if len(nums) < 2:
+            return 0
+        nums.sort()
+        ct = 0
+        for i in range(len(nums) - 2):
+            t = target - nums[i]
+
+            l, r = i + 1, len(nums) - 1
+            while l < r:
+                if nums[l] + nums[r] < t:
+                    ct += r - l
+                    l += 1
+                else:
+                    r -= 1
         return ct
